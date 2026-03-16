@@ -70,23 +70,33 @@ echo ""
 
 # 4. Verificar base de datos
 echo -e "${BLUE}🗄️  Verificando base de datos...${NC}"
-python3 -c "from scripts.database import inicializar_db; inicializar_db(); print('✅ Base de datos lista')" || {
+cd /home/oficina_ia/oficina_abuelos/scripts
+python3 -c "from database import inicializar_db; inicializar_db(); print('✅ Base de datos lista')" || {
     echo -e "${RED}❌ Error con la base de datos${NC}"
     exit 1
 }
+cd /home/oficina_ia/oficina_abuelos
 
 echo ""
 
 # 5. Verificar Ollama
 echo -e "${BLUE}📡 Verificando Ollama...${NC}"
-python3 -c "from scripts.utils import verificar_ollama_disponible; disponible = verificar_ollama_disponible(); print(f\"{'✅ Ollama disponible' if disponible else '⚠️  Ollama no disponible (usará Gemini)'}\")" 
+cd /home/oficina_ia/oficina_abuelos/scripts
+python3 << 'PYTHON_EOF'
+from utils import verificar_ollama_disponible
+if verificar_ollama_disponible():
+    print('✅ Ollama disponible')
+else:
+    print('⚠️  Ollama no disponible (usará Gemini)')
+PYTHON_EOF
+cd /home/oficina_ia/oficina_abuelos
 
 echo ""
 
-# 6. Iniciar bot
-echo -e "${GREEN}🚀 INICIANDO BOT...${NC}"
+# 6. Listo para iniciar
+echo -e "${GREEN}🚀 BOT LISTO PARA INICIAR...${NC}"
 echo ""
-echo -e "${BLUE}📱 Para usar el bot:${NC}"
+echo -e "${BLUE}📱 Para usar el bot en Telegram:${NC}"
 echo "  1. Abre Telegram"
 echo "  2. Busca a tu bot por username (@TuUsername)"
 echo "  3. Escribe /start para comenzar"
@@ -99,11 +109,20 @@ echo "  /stats     - Ver tus estadísticas"
 echo "  /historial - Ver últimas consultas"
 echo "  /nuevo     - Iniciar nueva sesión"
 echo ""
-echo -e "${YELLOW}⏸️  Presiona Ctrl+C para detener el bot${NC}"
+echo "═══════════════════════════════════════════════════════════════════════════════"
+echo ""
+echo -e "${GREEN}✅ VERIFICACIONES COMPLETADAS - BOT LISTA A EJECUTARSE${NC}"
+echo ""
+echo -e "${BLUE}🚀 PARA INICIAR EL BOT, EJECUTA:${NC}"
+echo ""
+echo "   cd /home/oficina_ia/oficina_abuelos/scripts"
+echo "   python3 telegram_bot.py"
+echo ""
+echo "   O simplemente:"
+echo "   python3 /home/oficina_ia/oficina_abuelos/scripts/telegram_bot.py"
+echo ""
+echo -e "${YELLOW}⏸️  Para detener el bot, presiona Ctrl+C${NC}"
 echo ""
 echo "═══════════════════════════════════════════════════════════════════════════════"
 echo ""
-
-# 7. Inicia el bot
-cd /home/oficina_ia/oficina_abuelos
-python3 scripts/telegram_bot.py
+echo -e "${GREEN}✨ Deploy completado exitosamente${NC}"
