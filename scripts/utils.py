@@ -13,7 +13,8 @@ from config import (
     LLM_TEMPERATURE_VENDEDOR, LLM_TEMPERATURE_AUDITOR,
     LLM_NUM_CTX
 )
-from crewai import LLM
+# crewai is imported lazily inside get_llm_* functions to allow importing
+# this module without requiring crewai (e.g. for unit tests or mock mode).
 
 # ============================================
 # SANITIZACIÓN DE ENTRADAS
@@ -109,6 +110,7 @@ def get_llm_vendedor():
     """
     Retorna el LLM para vendedor/concierge con fallback automático
     """
+    from crewai import LLM
     if verificar_ollama_disponible():
         if VERBOSE_MODE:
             print("✅ Usando Ollama (local) para vendedor")
@@ -132,6 +134,7 @@ def get_llm_auditor():
     """
     Retorna el LLM para auditor con fallback automático
     """
+    from crewai import LLM
     if verificar_ollama_disponible():
         if VERBOSE_MODE:
             print("✅ Usando Ollama (local) para auditor")
