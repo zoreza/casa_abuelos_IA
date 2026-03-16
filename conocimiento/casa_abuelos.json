@@ -1,0 +1,67 @@
+{
+  "negocio": {
+    "nombre": "La Casa de los Abuelos",
+    "ubicacion": "Punta Pérula, Jalisco, México",
+    "propietario": "Mario",
+    "encargada_operaciones": "Elia"
+  },
+  "restricciones_criticas_para_ia": {
+    "VISTA_AL_MAR": "FALSO. La casa NO tiene vista al mar. Está a 2 cuadras de la playa (12 min caminando).",
+    "VISTA_AL_ATARDECER": "LIMITADA. No hay vistas panorámicas de atardeceres desde terrazas.",
+    "TOALLAS": "PROHIBIDO afirmar que se incluyen. El huésped DEBE llevar toallas de baño y playa.",
+    "MASCOTAS": "SOLO en exterior. Prohibido el ingreso de animales a las habitaciones.",
+    "ALUCINACION_PREVENTIVA": "Si el cliente pregunta por algo que NO está en el inventario, usa el Protocolo de Incertidumbre."
+  },
+  "logistica_y_llegada": {
+    "direccion_exacta": "Pelicano Lote #4",
+    "coordenadas": "19°35'28.7\"N 105°07'00.1\"W",
+    "accesos": {
+      "porton_exterior": "Candado de combinación (gestionado por Elia).",
+      "puerta_principal": {
+        "metodo": "Contraseña fija + Tarjetas NFC",
+        "codigo_teclado": "36490995#",
+        "tarjetas_nfc": "4 disponibles. Costo por pérdida: $150 MXN.",
+        "emergencia": "Llaves físicas ocultas detrás del tanque de Gas."
+      }
+    },
+    "estacionamiento": {
+      "capacidad": "Hasta 10 vehículos. Techado para 2 autos medianos en la terraza."
+    }
+  },
+  "propiedad_detalles": {
+    "capacidad_total": 11,
+    "distribucion_cuartos": [
+      {"id": 1, "camas": "1 Matrimonial, 2 Individuales", "capacidad": 4, "baño": "Compartido"},
+      {"id": 2, "camas": "1 Matrimonial, 1 Individual", "capacidad": 3, "baño": "Compartido"},
+      {"id": 3, "camas": "2 Matrimoniales", "capacidad": 4, "baño": "Privado"}
+    ],
+    "amenidades_confirmadas": {
+      "cocina": ["Cafetera", "Estufa", "Refrigerador", "Utensilios básicos"],
+      "insumos_cortesia": ["Café", "Azúcar", "Stevia", "Aceite"],
+      "climatizacion": "A/C y ventiladores en cada cuarto.",
+      "entretenimiento": "TV 4K con Streaming.",
+      "internet": "Starlink (200MB/s promedio)."
+    },
+    "inventario_NO_confirmado": [
+      "Horno microondas",
+      "Licuadora",
+      "Horno de convección",
+      "Secadora de ropa"
+    ]
+  },
+  "finanzas_y_reservas": {
+    "moneda": "MXN",
+    "tarifas": {
+      "temporada_baja": 3500,
+      "temporada_alto": 4500,
+      "estancia_minima": 2
+    },
+    "politicas": {
+      "cancelacion": "Reembolso total solo con 5 días de anticipación.",
+      "apartado": "Costo de 1 noche."
+    }
+  },
+  "protocolo_incertidumbre": {
+    "instruccion": "Si la información no está en 'amenidades_confirmadas', responde: 'No tengo esa información disponible en este momento, lo consulto con Mario/Elia y regreso con usted'."
+  }
+}

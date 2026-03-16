@@ -1,0 +1,42 @@
+{
+  "propiedad": "La Casa de los Abuelos",
+  "fechas_no_disponibles": [
+  ],
+  "reglas_reserva": {
+    "minimo_noches": 2,
+    "check_in": "15:00",
+    "check_out": "11:00"
+  },
+  "temporada_alta_rangos": [
+    {
+      "nombre": "Semana Santa y Pascua",
+      "inicio": "2026-03-28",
+      "fin": "2026-04-12"
+    },
+    {
+      "nombre": "Vacaciones de Verano",
+      "inicio": "2026-07-15",
+      "fin": "2026-08-16"
+    },
+    {
+      "nombre": "Invierno (Navidad y Año Nuevo)",
+      "inicio": "2026-12-18",
+      "fin": "2027-01-06"
+    },
+    {
+      "nombre": "Puente - Constitución",
+      "inicio": "2026-01-30",
+      "fin": "2026-02-02"
+    },
+    {
+      "nombre": "Puente - Natalicio Benito Juárez",
+      "inicio": "2026-03-13",
+      "fin": "2026-03-16"
+    },
+    {
+      "nombre": "Puente - Revolución Mexicana",
+      "inicio": "2026-11-13",
+      "fin": "2026-11-16"
+    }
+  ]
+}
