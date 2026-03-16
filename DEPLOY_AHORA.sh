@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# ╔════════════════════════════════════════════════════════════════════════════╗
+# ║           🚀 DEPLOY TELEGRAM BOT - CHEAT SHEET RÁPIDO                     ║
+# ║                    Copy-Paste Ready (5 pasos)                             ║
+# ╚════════════════════════════════════════════════════════════════════════════╝
+
+echo ""
+echo "════════════════════════════════════════════════════════════════════════════"
+echo "   🎯 TELEGRAM BOT - INSTRUCCIONES DE DEPLOY"
+echo "════════════════════════════════════════════════════════════════════════════"
+echo ""
+
+echo "PASO 1️⃣ : OBTENER TOKEN (hacer 1 sola vez)"
+echo "───────────────────────────────────────────"
+echo ""
+echo "✓ Abre: web.telegram.org o app de Telegram"
+echo "✓ Busca: @BotFather"
+echo "✓ Escribe: /newbot"
+echo "✓ Nombre: Casa Abuelos Bot (o el que quieras)"
+echo "✓ Username: casa_abuelos_bot (DEBE SER ÚNICO)"
+echo "✓ Recibirás: 123456789:ABCDefGHIJKlmnoPQRSTuvWXYZabcdefgh"
+echo "✓ COPIA ESE TOKEN 👆"
+echo ""
+
+echo "PASO 2️⃣ : CONFIGURAR TOKEN EN .env"
+echo "──────────────────────────────────"
+echo ""
+echo "cd /home/oficina_ia/oficina_abuelos"
+echo ""
+echo "sed -i 's/your-telegram-bot-token-here/123456789:ABCDefGHIJKlmnoPQRSTuvWXYZabcdefgh/' .env"
+echo ""
+echo "(Reemplaza el token de ejemplo por el que COPIASTE de BotFather)"
+echo ""
+
+echo "PASO 3️⃣ : EJECUTAR EL BOT"
+echo "──────────────────────────"
+echo ""
+echo "cd /home/oficina_ia/oficina_abuelos"
+echo "python3 scripts/telegram_bot.py"
+echo ""
+echo "O con verificaciones automáticas:"
+echo "bash deploy_telegram.sh"
+echo ""
+
+echo "PASO 4️⃣ : USAR EL BOT"
+echo "──────────────────────"
+echo ""
+echo "✓ Abre Telegram"
+echo "✓ Busca: @casa_abuelos_bot"
+echo "✓ Escribe: /start"
+echo "✓ Haz tus preguntas normalmente"
+echo ""
+
+echo "PASO 5️⃣ : COMANDOS DISPONIBLES"
+echo "──────────────────────────────"
+echo ""
+echo "/start      - Bienvenida"
+echo "/help       - Ayuda y comandos"
+echo "/stats      - Tus estadísticas"
+echo "/historial  - Últimas consultas"
+echo "/nuevo      - Nueva sesión"
+echo ""
+
+echo "════════════════════════════════════════════════════════════════════════════"
+echo "⏰ TIMING: Las respuestas tardan ~2.5-3 minutos (multi-agente es lento)"
+echo "════════════════════════════════════════════════════════════════════════════"
+echo ""
+echo "✅ ¡YA ESTÁ LISTO! Sigue los 5 pasos y disfruta del bot."
+echo ""
