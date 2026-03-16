@@ -61,7 +61,7 @@ class TestValidacionFechas:
             (hoy - timedelta(days=1)).strftime("%Y-%m-%d")
         )
         assert es_valida is False
-        assert "antes" in msg.lower()
+        assert "anterior" in msg.lower()
     
     def test_minimo_noches(self):
         """Test de mínimo de noches"""
@@ -163,7 +163,7 @@ class TestMetricas:
         
         assert "total_consultas" in resumen
         assert "tiempo_promedio_respuesta" in resumen
-        assert "tata_exito_porcentaje" in resumen
+        assert "tasa_exito_porcentaje" in resumen
         assert resumen["total_consultas"] == 1
 
 
