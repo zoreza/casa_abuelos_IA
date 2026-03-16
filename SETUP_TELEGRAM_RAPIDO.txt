@@ -1,0 +1,120 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    🤖 TELEGRAM BOT - SETUP RÁPIDO                             ║
+║                      Casa Abuelos IA - Deployment                             ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+PASO 1: OBTENER TOKEN DE TELEGRAM (3 minutos)
+════════════════════════════════════════════════════════════════════════════════
+
+1. Abre Telegram (web.telegram.org o app)
+2. Busca: @BotFather
+3. Escribe: /newbot
+4. Siguele:
+   - Nombre del bot: "Casa Abuelos Bot" (o el que quieras)
+   - Username: "casa_abuelos_bot" (debe ser ÚNICO y terminar en _bot)
+5. Copia el TOKEN que te da (ej: 123456789:ABCDefGHIJKlmnoPQRSTuvWXYZabcdefgh)
+
+Guardalo en un lugar seguro.
+
+════════════════════════════════════════════════════════════════════════════════
+
+PASO 2: CONFIGURAR TOKEN EN .ENV
+════════════════════════════════════════════════════════════════════════════════
+
+Opción A (Automatico):
+  cd /home/oficina_ia/oficina_abuelos
+  sed -i 's/your-telegram-bot-token-here/PEGA_TU_TOKEN_AQUI/' .env
+
+Opción B (Manual):
+  1. cd /home/oficina_ia/oficina_abuelos
+  2. nano .env  (o cualquier editor)
+  3. Busca: TELEGRAM_BOT_TOKEN=your-telegram-bot-token-here
+  4. Reemplaza con: TELEGRAM_BOT_TOKEN=123456789:ABCDefGHIJKlmnoPQRSTuvWXYZabcdefgh
+  5. Guarda (Ctrl+O, Enter, Ctrl+X en nano)
+
+════════════════════════════════════════════════════════════════════════════════
+
+PASO 3: EJECUTAR EL BOT
+════════════════════════════════════════════════════════════════════════════════
+
+OPCIÓN 1 - Script automático (recomendado):
+  cd /home/oficina_ia/oficina_abuelos
+  bash deploy_telegram.sh
+
+OPCIÓN 2 - Directo:
+  cd /home/oficina_ia/oficina_abuelos
+  python3 scripts/telegram_bot.py
+
+════════════════════════════════════════════════════════════════════════════════
+
+PASO 4: USAR EL BOT EN TELEGRAM
+════════════════════════════════════════════════════════════════════════════════
+
+1. Abre Telegram
+2. Busca a tu bot por @username (ej: @casa_abuelos_bot)
+3. Escribe: /start
+4. Haz tus preguntas
+
+Ejemplo de preguntas:
+  ✓ ¿Tienen disponible del 20 al 23 de marzo para 6 personas?
+  ✓ ¿Cuánto cuesta por noche en mayo?
+  ✓ ¿Aceptan perros?
+  ✓ ¿Qué amenidades tiene?
+
+════════════════════════════════════════════════════════════════════════════════
+
+COMANDOS DISPONIBLES
+════════════════════════════════════════════════════════════════════════════════
+
+/start      - Mensaje de bienvenida
+/help       - Guía de comandos
+/stats      - Tus estadísticas
+/historial  - Últimas 5 consultas
+/nuevo      - Iniciar nueva sesión
+
+════════════════════════════════════════════════════════════════════════════════
+
+NOTAS IMPORTANTES
+════════════════════════════════════════════════════════════════════════════════
+
+1. Las respuestas tardan 2-3 minutos - Es normal (procesando 3 agentes)
+
+2. El bot necesita que Ollama esté corriendo:
+   ollama serve &
+
+3. Para detener el bot:
+   Presiona Ctrl+C en la terminal
+
+4. Logs están en:
+   /home/oficina_ia/oficina_abuelos/logs/telegram_bot.log
+
+5. Base de datos de conversaciones:
+   /home/oficina_ia/oficina_abuelos/logs/chats.db
+
+════════════════════════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════════════════
+
+¿Bot no responde?
+  → Verifica que el token es correcto: grep TELEGRAM_BOT_TOKEN .env
+  → Revisa logs: tail -f logs/telegram_bot.log
+  → Asegúrate que Ollama está corriendo
+
+¿Errores de token?
+  → Token debe empezar con números y tener :
+  → Ejemplo correcto: 123456789:ABCDefGHIJKlmnoPQRSTuvWXYZabcdefgh
+
+¿Las respuestas son muy largas?
+  → Normal, Telegram divide en múltiples mensajes
+  → Usa /historial para ver la conversación completa
+
+════════════════════════════════════════════════════════════════════════════════
+
+LISTO!!! 🚀
+
+El bot está configurado y listo para recibir consultas.
+
+Pregunta específica? Revisa TELEGRAM_BOT_README.md para más detalles.
+
+════════════════════════════════════════════════════════════════════════════════

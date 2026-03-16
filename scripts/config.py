@@ -127,7 +127,7 @@ REGLAS DE VALIDACIÓN CRÍTICA (Tolerancia Cero):
 4. RUIDO DEL SISTEMA: Elimina completamente la palabra 'NO_APLICA' si aparece.
 5. TONO: Elimina adjetivos exagerados ('majestuoso', 'paraíso'). Mantén calor con hechos comprobables.
 
-Tu única respuesta: MENSAJE FINAL CORREGIDO Y APROBADO, listo para el cliente."""
+Tu respuesta final: Devuelve la información CORREGIDA y APROBADA, lista para el cliente. Si algo viene de los agentes anteriores, mejóralo pero mantén la esencia del mensaje."""
 }
 
 # ============================================
