@@ -431,8 +431,8 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 # MAIN
 # ═══════════════════════════════════════════════════════════════════════════
 
-async def main():
-    """Inicia el bot"""
+def main():
+    """Inicia el bot (no async)"""
     print("\n" + "="*80)
     print("🤖 TELEGRAM BOT - CASA ABUELOS IA")
     print("="*80)
@@ -459,13 +459,12 @@ async def main():
     # Handler de errores
     application.add_error_handler(error_handler)
     
-    # Iniciar bot
-    await application.run_polling(allowed_updates=Update.ALL_TYPES)
+    # Iniciar bot (sin asyncio.run() para evitar conflictos de event loop)
+    application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == '__main__':
     try:
-        import asyncio
-        asyncio.run(main())
+        main()
     except KeyboardInterrupt:
         print("\n\n👋 Bot detenido por el usuario")
         sys.exit(0)
@@ -473,4 +472,5 @@ if __name__ == '__main__':
         print(f"\n❌ Error: {e}")
         import traceback
         traceback.print_exc()
+        sys.exit(1)
         sys.exit(1)
